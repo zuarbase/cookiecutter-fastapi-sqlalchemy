@@ -1,0 +1,7 @@
+.idea
+.env
+*.egg-info
+*.db
+__pycache__
+/build
+/{{cookiecutter.virtualenv_directory}}
