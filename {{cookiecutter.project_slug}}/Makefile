@@ -1,4 +1,4 @@
-all: flake8 test
+all: flake8 coverage
 .PHONY: all
 
 flake8:
@@ -8,6 +8,10 @@ flake8:
 test:
 	pytest -xv tests
 .PHONY: test
+
+coverage:
+	$(PYTEST) --cov={{cookiecutter.project_slug}} --cov=jobs --cov-report=term-missing --cov-fail-under=100 tests/
+.PHONY: coverage
 
 requirements.txt:
 	virtualenv -p python3 {{cookiecutter.virtualenv_directory}}

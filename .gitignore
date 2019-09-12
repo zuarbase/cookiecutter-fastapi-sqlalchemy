@@ -5,3 +5,6 @@
 __pycache__
 /build
 /{{cookiecutter.virtualenv_directory}}
+
+/venv
+/pyenv

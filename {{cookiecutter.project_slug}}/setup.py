@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-PACKAGE = '{{cookiecutter.project_name}}'
+PACKAGE = '{{cookiecutter.project_slug}}'
 VERSION = '0.0.0'
 
 setup(
@@ -16,6 +16,7 @@ setup(
         'dev': [
             'sphinx',
             'aiofiles',  # only needed for starlette.staticfiles.StaticFiles
+            'pytest-cov'
         ],
         'prod': [
             'uvicorn',
