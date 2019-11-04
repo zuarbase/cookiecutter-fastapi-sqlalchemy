@@ -1,2 +1,2 @@
 """ {{cookiecutter.project_name}} """
-from . import endpoints  # noqa
+from . import endpoints, models  # noqa

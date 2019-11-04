@@ -10,7 +10,7 @@ test:
 .PHONY: test
 
 coverage:
-	$(PYTEST) --cov={{cookiecutter.project_slug}} --cov=jobs --cov-report=term-missing --cov-fail-under=100 tests/
+	pytest --cov={{cookiecutter.project_slug}} --cov-report=term-missing --cov-fail-under=100 tests/
 .PHONY: coverage
 
 requirements.txt:
