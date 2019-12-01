@@ -10,7 +10,6 @@ echo DEBUG=true > .env
 python3 -c 'import random; print("SECRET=" + "".join([random.choice("abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)") for i in range(50)]))' >> .env
 echo DATABASE_URL=sqlite:///$PWD/{{cookiecutter.project_slug}}.db?check_same_thread=False >> .env
 
-source .env
 make
 
 # Alembic setup
