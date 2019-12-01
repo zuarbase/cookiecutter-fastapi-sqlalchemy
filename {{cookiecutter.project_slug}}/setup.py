@@ -16,7 +16,8 @@ setup(
         'dev': [
             'sphinx',
             'aiofiles',  # only needed for starlette.staticfiles.StaticFiles
-            'pytest-cov'
+            'pytest-cov',
+            'pytest-env'
         ],
         'prod': [
             'uvicorn',
