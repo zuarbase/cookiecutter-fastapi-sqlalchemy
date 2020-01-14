@@ -2,6 +2,9 @@
 
 set -e -x
 
+# suppress pip warnings
+export PATH=$PATH:$PWD/{{cookiecutter.virtualenv_directory}}/bin
+
 make requirements.txt
 source {{cookiecutter.virtualenv_directory}}/bin/activate
 
