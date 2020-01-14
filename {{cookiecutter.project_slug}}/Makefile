@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 all: flake8 coverage
 .PHONY: all
 
