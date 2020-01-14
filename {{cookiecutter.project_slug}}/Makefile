@@ -16,7 +16,9 @@ coverage:
 .PHONY: coverage
 
 requirements.txt:
-	virtualenv -p python3 {{cookiecutter.virtualenv_directory}}
-	{{cookiecutter.virtualenv_directory}}/bin/pip3 install git+https://github.com/zuarbase/fastapi-sqlalchemy#egg=fastapi-sqlalchemy[dev,prod]
-	{{cookiecutter.virtualenv_directory}}/bin/pip3 install -e .[dev,prod]
+	python3 -m venv {{cookiecutter.virtualenv_directory}}
+	source {{cookiecutter.virtualenv_directory}}/bin/activate && \
+		pip3 install --upgrade pip && \
+		pip3 install git+https://github.com/zuarbase/fastapi-sqlalchemy#egg=fastapi-sqlalchemy[dev,prod] && \
+		pip3 install -e .[dev,prod] && \
 	{{cookiecutter.virtualenv_directory}}/bin/pip3 freeze | egrep -v "{{cookiecutter.project_slug}}|pkg-resources" > $@

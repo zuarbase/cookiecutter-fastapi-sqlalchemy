@@ -2,10 +2,8 @@
 
 set -e -x -a
 
-# suppress pip warnings
-export PATH=$PATH:$PWD/{{cookiecutter.virtualenv_directory}}/bin
-
 make requirements.txt
+
 source {{cookiecutter.virtualenv_directory}}/bin/activate
 
 # .env
@@ -20,8 +18,8 @@ make
 cd {{cookiecutter.project_slug}}
 alembic init alembic
 cd ..
-sed -i "s|script_location = alembic|script_location = $PWD/{{cookiecutter.project_slug}}/alembic|" {{cookiecutter.project_slug}}/alembic.ini
-sed -i "s|sqlalchemy.url = driver://user:pass@localhost/dbname|sqlalchemy.url = sqlite:///$PWD/{{cookiecutter.project_slug}}.db|" {{cookiecutter.project_slug}}/alembic.ini
+sed -i .bak "s|script_location = alembic|script_location = $PWD/{{cookiecutter.project_slug}}/alembic|" {{cookiecutter.project_slug}}/alembic.ini
+sed -i .bak "s|sqlalchemy.url = driver://user:pass@localhost/dbname|sqlalchemy.url = sqlite:///$PWD/{{cookiecutter.project_slug}}.db|" {{cookiecutter.project_slug}}/alembic.ini
 
 # Create database
 touch $PWD/{{cookiecutter.project_slug}}.db
