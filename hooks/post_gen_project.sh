@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e -x
+set -e -x -a
 
 # suppress pip warnings
 export PATH=$PATH:$PWD/{{cookiecutter.virtualenv_directory}}/bin
