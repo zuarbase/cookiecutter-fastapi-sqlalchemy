@@ -31,7 +31,7 @@ def initdb():
     engine = sqlalchemy.create_engine(sqlalchemy_url)
     BASE.metadata.create_all(engine)
 
-    alembic.command.stamp(cfg, "head")
+    alembic.command.stamp(cfg, 'head')
 
 
 @cli.command()
@@ -48,7 +48,7 @@ def runserver(uvicorn_args):
     cmd = [
         'uvicorn', '{{cookiecutter.project_slug}}.main:app', '--debug'
     ] + list(uvicorn_args)
-    subprocess.run(" ".join(cmd), shell=True, check=True)
+    subprocess.run(' '.join(cmd), shell=True, check=True)
 
 
 @cli.command()
@@ -69,7 +69,7 @@ def setpassword(username, password):
     session = Session()
     user = models.User.get_by_username(session, name=username)
     if not user:
-        raise click.BadParameter("Not found", param="username")
+        raise click.BadParameter('Not found', param='username')
     user.password = password
     session.commit()
 

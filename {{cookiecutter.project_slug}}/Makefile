@@ -2,7 +2,7 @@ all: flake8 coverage
 .PHONY: all
 
 flake8:
-	flake8 {{cookiecutter.project_slug}} tests
+	flake8 {{cookiecutter.project_slug}} setup.py manage.py tests
 .PHONY: flake8
 
 test:

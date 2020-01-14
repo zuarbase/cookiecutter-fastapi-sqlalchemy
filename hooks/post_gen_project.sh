@@ -1,9 +1,12 @@
 #!/bin/bash
 
+set -e
+
 make requirements.txt
-make
 
 . {{cookiecutter.virtualenv_directory}}/bin/activate
+
+make
 
 # .env
 echo DEBUG=true > .env
