@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -e -x
 
 make requirements.txt
 source {{cookiecutter.virtualenv_directory}}/bin/activate
